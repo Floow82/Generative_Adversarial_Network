@@ -1,5 +1,5 @@
 
-"""Generative Adversarial Network with Linear layers -- Models and Training"""
+"""Linear Generative Adversarial Network with Linear layers -- Models and Training"""
 
 ###Importations
 import torch
