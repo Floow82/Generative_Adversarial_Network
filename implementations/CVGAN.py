@@ -1,5 +1,5 @@
 
-"""Generative Adversarial Network with Linear layers -- Models and Training"""
+""" Convolutionnal Generative Adversarial Network with Linear layers -- Models and Training"""
 
 ###Importations
 import torch
@@ -22,7 +22,7 @@ class Generator (nn.Module):
     #Repetitive block of layer, normalization and activation
     def GBlock(self, inp, out, kernel_size = 4):
       return nn.Sequential(
-        nn.Convtranspose1d(inp, out, a, b, c),
+        nn.Convtranspose1d(inp, out, kernel_size),
         nn.BatchNorm1d(out),
         nn.ReLU(inplace=True))
     
@@ -63,9 +63,9 @@ class Discriminator (nn.Module):
   def __init__(self):
     super(Discriminator, self).__init__()
     self.frf_length = 3001
-    def DBlock(self, inp, out):
+    def DBlock(self, inp, out, kernel_size=4):
       return nn.Sequential(
-        nn.Conv1d(inp, out, kernel_size = 4),
+        nn.Conv1d(inp, out, kernel_size),
         nn.BatchNorm1d(out),
         nn.LeakyReLU(0.2, inplace = True))
     
