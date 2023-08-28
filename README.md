@@ -22,14 +22,14 @@ The input data and generator-managed data are then sent to the concurrent networ
 
 The two networks are continually in conflict. If the discriminator network detects erroneous data, it sends it back to the generator network. In this instance, the generator network is still learning and has not yet achieved full proficiency. Simultaneously, the discriminator network has acquired knowledge. Since the two neural systems learn from each other, a profound learning system is established. The generator network aims to create datasets that resemble real data so closely that they cannot be distinguished from genuine examples by the discriminator network. Conversely, the discriminator network aims to comprehensively analyze and understand genuine examples to the extent that forged examples are practically impossible to classify as genuine.
 
-#Linear GAN
+### Linear GAN
 In this case, the generator and discriminator have been implemented with linear layers only. This is the most basic implementation of GAN, it is not very complex or deep but can give good results on data that is not too complex.
 
-#Convolutionnal GAN
+### Convolutionnal GAN
 Here, the linear layers are replaced by convolution layers with activation (LeakyReLU) and normalisation (Batchnorm) layers. This type of implementation is the most promising for complex data in the context of traditional GANs. The generator and discriminator each have 3 convolution layers, which is quite large, so it requires a fairly low learning rate and a fairly large batch size to obtain error-free results.
 
-#Wasserstein GAN
+### Wasserstein GAN
 The last implementation is a Generative Adversarial Network model based on Wasserstein theory training (the scientific paper was published in 2017 introducing this new algorithm \cite{ref10}, known as WGAN is reputed to manage considerably more intricate data than traditional models. These models mark a significant advance in GAN training by resolving problems that traditional GANS are unable to solve, such as mode collapse or instability. However, this implementation remains highly intricate and necessitates meticulous selection of hyperparameters and training to achieve optimal performance.
 
-#Results
+## Results
 Finally, the results are illustrated in this place, for the three implementations. The results consist in the result produced by the generator compared to the real data expected, and the tracking of the losses for both generator and discriminator.
