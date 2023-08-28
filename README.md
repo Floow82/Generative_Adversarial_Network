@@ -8,22 +8,19 @@ As part of my research into data generation for the dynamic analysis of material
     + [Convolutionnal GAN](#Convolutionnal GAN)
     + [Wasserstein GAN](#Wasserstein GAN)
   * [Results](#Results)
-    
-
-
 
 ##  Dataset
 The Python code presented in this section corresponds to the creation of the dataset that will be used to train the various models. This dataset consists of an excel file "coordinates.xlsx" containing the various coordinates of the excitation points and the name of the file containing the corresponding FRF data, and a folder containing all the excel files containing the FRF data. In total, this dataset contains 300 FRF data points and their coordinates. 
 The "FRFDataset" class transforms the FRF data into a tensor and associates it with the coordinates to create the dataset. The "dataloader" function provided by Pytorch is then used to load the data.
 
 ## Implementations
-The purpose of a Generative Adversarial Network (GAN) is to learn from samples of real data and then produce its own creations that are indistinguishable from real images without human intervention. To attain this objective, two opposing neural networks are used.\\
+The purpose of a Generative Adversarial Network (GAN) is to learn from samples of real data and then produce its own creations that are indistinguishable from real images without human intervention. To attain this objective, two opposing neural networks are used.
 
-The initial neural network is known as a Generator, and its purpose is to create a fake. The network is given data and uses this to create its own output. For example, if a set of photos of people is fed into the generator, it will create a new photo based on the input. It relies on shared features of the given photo set to generate a photo that is similar. Therefore, it is not an exact copy, but in our case, it is a photograph of a non-existent person.\\
+The initial neural network is known as a Generator, and its purpose is to create a fake. The network is given data and uses this to create its own output. For example, if a set of photos of people is fed into the generator, it will create a new photo based on the input. It relies on shared features of the given photo set to generate a photo that is similar. Therefore, it is not an exact copy, but in our case, it is a photograph of a non-existent person.
 
-The input data and generator-managed data are then sent to the concurrent network. The second network is called the \textit{'Discriminator'} and its purpose is to process received data and identify its authenticity. Data will be labelled as false if it deviates widely from the model or if it seems too perfect. The discriminator can discern whether a given data appears natural or not.\\
+The input data and generator-managed data are then sent to the concurrent network. The second network is called the \textit{'Discriminator'} and its purpose is to process received data and identify its authenticity. Data will be labelled as false if it deviates widely from the model or if it seems too perfect. The discriminator can discern whether a given data appears natural or not.
 
-The two networks are continually in conflict. If the discriminator network detects erroneous data, it sends it back to the generator network. In this instance, the generator network is still learning and has not yet achieved full proficiency. Simultaneously, the discriminator network has acquired knowledge. Since the two neural systems learn from each other, a profound learning system is established. The generator network aims to create datasets that resemble real data so closely that they cannot be distinguished from genuine examples by the discriminator network. Conversely, the discriminator network aims to comprehensively analyze and understand genuine examples to the extent that forged examples are practically impossible to classify as genuine.\\
+The two networks are continually in conflict. If the discriminator network detects erroneous data, it sends it back to the generator network. In this instance, the generator network is still learning and has not yet achieved full proficiency. Simultaneously, the discriminator network has acquired knowledge. Since the two neural systems learn from each other, a profound learning system is established. The generator network aims to create datasets that resemble real data so closely that they cannot be distinguished from genuine examples by the discriminator network. Conversely, the discriminator network aims to comprehensively analyze and understand genuine examples to the extent that forged examples are practically impossible to classify as genuine.
 
 #Linear GAN
 In this case, the generator and discriminator have been implemented with linear layers only. This is the most basic implementation of GAN, it is not very complex or deep but can give good results on data that is not too complex.
