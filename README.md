@@ -4,9 +4,9 @@ As part of my research into data generation for the dynamic analysis of material
 ## Table of Content
   * [Dataset](#Dataset)
   * [Implementations](#Implementations)
-    + [Linear GAN](#Linear GAN)
-    + [Convolutionnal GAN](#Convolutionnal GAN)
-    + [Wasserstein GAN](#Wasserstein GAN)
+    + [Linear GAN](#Linear_GAN)
+    + [Convolutionnal GAN](#Convolutionnal_GAN)
+    + [Wasserstein GAN](#Wasserstein_GAN)
   * [Results](#Results)
 
 ##  Dataset
