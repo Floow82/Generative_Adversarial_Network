@@ -1,4 +1,4 @@
-#Generative_Adversarial_Network
+# GENERATIVE ADVERSAIAL NETWORKS
 As part of my research into data generation for the dynamic analysis of materials, I had the opportunity to carry out several implementations of deep learning models using the Pytorch module and following the GENERATUVE ADVERSARIAL NETWORKS (GAN) method. The aim of these models was to produce Frequency Response Function (FRF) data from the excitation coordinates. The three models used and presented in this repository are: a Linear GAN, a Convolutional GAN and a Wasserstein GAN.
 
 ## Table of Content
