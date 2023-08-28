@@ -8,7 +8,7 @@ As part of my research into data generation for the dynamic analysis of material
     + [Convolutionnal GAN](#Convolutionnal GAN)
     + [Wasserstein GAN](#Wasserstein GAN)
   * [Results](#Results)
-  * 
+    
 
 
 
